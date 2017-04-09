@@ -71,8 +71,11 @@ function parseSchools(schools) {
 function scheduleRow(list) {
 	var t = teacher._get(list.teacher);
 	var s;
+	if(list.link === '') {
+		list.link = '#';
+	}
 	if(list.passed) {
-		s = '<div class="schedule-row">\n<div class="schedule-col date">\n<span>' + list.time.start.getDate() + '</span>\n</div>\n<div class="schedule-col title">\n<span class="title">\n<a href="#">Лекция ' + list.id + '. ' + list.name + '</a>\n</span>\n<span class="auditorium">' + list.auditorium + '</span>\n<span class="schools">' + parseSchools(list.schools) + '</span>\n</div>\n<div class="schedule-col speakers"><span class="speaker">\n<a href="#modal" data-name="' + t.name + '" data-photo="' + t.photo + '" data-company="' + t.company + '">' + list.teacher + '</a>\n</span>\n<span class="company">' + t.company + '</span>\n</div>\n</div>';
+		s = '<div class="schedule-row">\n<div class="schedule-col date">\n<span>' + list.time.start.getDate() + '</span>\n</div>\n<div class="schedule-col title">\n<span class="title">\n<a href="' + list.link + '">Лекция ' + list.id + '. ' + list.name + '</a>\n</span>\n<span class="auditorium">' + list.auditorium + '</span>\n<span class="schools">' + parseSchools(list.schools) + '</span>\n</div>\n<div class="schedule-col speakers"><span class="speaker">\n<a href="#modal" data-name="' + t.name + '" data-photo="' + t.photo + '" data-company="' + t.company + '">' + list.teacher + '</a>\n</span>\n<span class="company">' + t.company + '</span>\n</div>\n</div>';
 	}
 	else {
 		s = '<div class="schedule-row">\n<div class="schedule-col date">\n<span>' + list.time.start.getDate() + '</span>\n</div>\n<div class="schedule-col title">\n<span class="title">Лекция ' + list.id + '. ' + list.name + '</span>\n<span class="auditorium">' + list.auditorium + '</span>\n<span class="schools">' + parseSchools(list.schools) + '</span>\n</div>\n<div class="schedule-col speakers"><span class="speaker">\n<a href="#modal" data-name="' + t.name + '" data-photo="' + t.photo + '" data-company="' + t.company + '">' + list.teacher + '</a>\n</span>\n<span class="company">' + t.company + '</span>\n</div>\n</div>';
