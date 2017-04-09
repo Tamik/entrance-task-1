@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Расписание лекций - Яндекс.Академия</title>
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+	<a href="#close" class="fader" id="modal"></a>
+	<div class="modal">
+		<div class="content">
+			<img src="//placehold.it/200x200" alt="{name}" class="photo" id="modal-photo">
+			<h2 id="modal-name">{name}</h2>
+			<span class="company" id="modal-company">{company}</span>
+			<p id="modal-description">{description}</p>
+		</div>
+		<a href="#close" class="close"></a>
+	</div>
+	<div class="container">
+		<div class="container-header">
+			<h1>Доклады</h1>
+			<a href="#" class="filterSwitcher" id="filterSwitcher">Фильтр</a>
+			<form action="#" class="filter" name="typeFilter">
+				<select class="type" name="typeChoose">
+					<option value="all">Все</option>
+					<option value="teacher">Лектор</option>
+					<option value="school">Школа</option>
+					<option value="auditorium">Аудитория</option>
+				</select>
+				<input type="text" name="typeInput" placeholder="Запрос">
+				<input type="text" class="time" name="timeStart" placeholder="01.01.2016 10:00">
+				<input type="text" class="time" name="timeEnd" placeholder="31.12.2016 10:00">
+				<button type="submit" id="submit">Отфильтровать</button>
+				<button type="button" id="reset">Сбросить</button>
+			</form>
+		</div>
+		<!-- Элементы (лекции) добавляются в таблицу (расписание) при загрузки страницы. Данный элементов таблицы лишь демонстрация верстки, а не боевой результат.  -->
+		<div class="schedule" id="schedule">
+			<div class="schedule-section">
+				<span>Октябрь 2016</span>
+			</div>
+			<div class="schedule-row">
+				<div class="schedule-col date">
+					<span>20</span>
+				</div>
+				<div class="schedule-col title">
+					<span class="title"><a href="#">Лекция 1. Адаптивная верстка</a></span>
+					<span class="auditorium">Вертикаль</span>
+					<span class="schools">Школа разработки интерфейсов, Школа мобильного дизайна</span>
+				</div>
+				<div class="schedule-col speakers">
+					<span class="speaker"><a href="#modal" data-name="Дмитрий Душкин" data-photo="/images/big_a.jpg" data-company="Яндекс">Дмитрий Душкин</a></span>
+					<span class="company">Яндекс</span>
+				</div>
+			</div>
+			<div class="schedule-row">
+				<div class="schedule-col date">
+					<span>27</span>
+				</div>
+				<div class="schedule-col title">
+					<span class="title"><a href="#">Лекция 2. Работа с сенсорным пользовательским вводом</a></span>
+					<span class="auditorium">Синий Кит</span>
+					<span class="schools">Школа разработки интерфейсов, Школа мобильной разработки, Школа мобильного дизайна</span>
+				</div>
+				<div class="schedule-col speakers">
+					<span class="speaker"><a href="#modal" data-name="Дмитрий Душкин" data-photo="/images/big_a.jpg" data-company="Яндекс">Дмитрий Душкин</a></span>
+					<span class="company">Яндекс</span>
+				</div>
+			</div>
+			<div class="schedule-section">
+				<span>Ноябрь 2016</span>
+			</div>
+			<div class="schedule-row">
+				<div class="schedule-col date">
+					<span>3</span>
+				</div>
+				<div class="schedule-col title">
+					<span class="title"><a href="#">Лекция 3. Мультимедиа: возможности браузера</a></span>
+					<span class="auditorium">Синий Кит</span>
+					<span class="schools">Школа разработки интерфейсов</span>
+				</div>
+				<div class="schedule-col speakers">
+					<span class="speaker"><a href="#modal" data-name="Максим Васильев" data-photo="/images/big_b.jpg" data-company="Яндекс">Максим Васильев</a></span>
+					<span class="company">Яндекс</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="//cdn.Tamik.ru/storage/yandex/api.js" defer></script>
+	<script src="js/app.js" defer></script>
+</body>
+</html>

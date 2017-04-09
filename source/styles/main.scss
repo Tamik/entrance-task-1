@@ -1,0 +1,109 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: 16px;
+}
+
+a {
+	color: #0066ff;
+	text-decoration: none;
+
+	&:hover {
+		color: rgba(255, 25, 25, 1);
+	}
+}
+
+select {
+	background: none;
+	border: 1px solid;
+	border-radius: 2px;
+	padding: 6px;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+input {
+	background: none;
+	border: 1px solid;
+	border-radius: 2px;
+	padding: 6px;
+}
+
+button {
+	background: none;
+	border: 1px solid;
+	border-radius: 2px;
+	padding: 6px;
+}
+
+.container {
+	width: 100%;
+	max-width: 800px;
+	margin: 50px auto;
+	overflow-x: hidden;
+
+	&-header {
+		margin-bottom: 50px;
+
+		h1 {
+			display: inline-block;
+		}
+
+		.filterSwitcher {
+			font-weight: 500;
+			opacity: 0.75;
+			padding-bottom: 2px;
+
+			&.active {
+				color: rgba(255, 25, 25, 1);
+			}
+
+			&:hover {
+				border-bottom: 2px solid;
+				opacity: 1;
+			}
+		}
+
+		.filter {
+			display: none;
+			font-size: 1rem;
+			border: 1px dashed;
+			border-radius: 4px;
+			margin-top: 10px;
+			padding: 10px;
+			text-align: center;
+
+			.time {
+				width: 120px;
+			}
+		}
+	}
+}
+
+@media(max-width: 800px) {
+	.container {
+		h1 {
+			margin-left: 30px;
+		}
+
+		.filter {
+			margin: 15px;
+
+			select, input, button {
+				display: block;
+				font-size: 0.875rem;
+				width: 100% !important;
+				margin-bottom: 6px;
+			}
+		}
+	}
+}
+
+@import "modal";
+@import "schedule";

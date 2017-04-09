@@ -1,0 +1,301 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px; }
+
+a {
+  color: #0066ff;
+  text-decoration: none; }
+  a:hover {
+    color: #ff1919; }
+
+select {
+  background: none;
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 6px;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none; }
+
+input {
+  background: none;
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 6px; }
+
+button {
+  background: none;
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 6px; }
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  overflow-x: hidden; }
+  .container-header {
+    margin-bottom: 50px; }
+    .container-header h1 {
+      display: inline-block; }
+    .container-header .filterSwitcher {
+      font-weight: 500;
+      opacity: 0.75;
+      padding-bottom: 2px; }
+      .container-header .filterSwitcher.active {
+        color: #ff1919; }
+      .container-header .filterSwitcher:hover {
+        border-bottom: 2px solid;
+        opacity: 1; }
+    .container-header .filter {
+      display: none;
+      font-size: 1rem;
+      border: 1px dashed;
+      border-radius: 4px;
+      margin-top: 10px;
+      padding: 10px;
+      text-align: center; }
+      .container-header .filter .time {
+        width: 120px; }
+
+@media (max-width: 800px) {
+  .container h1 {
+    margin-left: 30px; }
+  .container .filter {
+    margin: 15px; }
+    .container .filter select, .container .filter input, .container .filter button {
+      display: block;
+      font-size: 0.875rem;
+      width: 100% !important;
+      margin-bottom: 6px; } }
+
+.fader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5; }
+  .fader:target {
+    display: block; }
+    .fader:target + .modal {
+      -webkit-transform: translate(-50%, 0%);
+              transform: translate(-50%, 0%);
+      top: 25%; }
+
+.modal {
+  position: fixed;
+  top: -100%;
+  right: 0%;
+  left: 50%;
+  background-color: white;
+  border-radius: 6px;
+  width: 400px;
+  min-height: 380px;
+  margin: 0px;
+  box-shadow: 10px black;
+  z-index: 6; }
+  .modal .content {
+    text-align: center;
+    padding: 20px; }
+    .modal .content .photo {
+      border-radius: 100%;
+      width: 200px;
+      height: 200px;
+      margin-top: -50px;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+      -webkit-transition: box-shadow 400ms ease;
+      transition: box-shadow 400ms ease; }
+      .modal .content .photo:hover {
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.35); }
+    .modal .content h2 {
+      margin-top: 10px; }
+    .modal .content span.company {
+      font-weight: 500;
+      margin-top: 6px;
+      color: rgba(0, 0, 0, 0.5); }
+    .modal .content p {
+      font-size: 0.9375rem;
+      margin-top: 16px; }
+  .modal .close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    background-image: url(/images/close.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transition: opacity 200ms ease;
+    transition: opacity 200ms ease; }
+    .modal .close:hover {
+      opacity: 0.75; }
+
+@media (max-width: 420px) {
+  .fader:target + .modal {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    top: 0%; }
+  .modal {
+    border-radius: 0px;
+    width: 100%;
+    height: 100%; }
+    .modal .content {
+      padding: 20px; }
+      .modal .content .photo {
+        margin-top: 15px; }
+      .modal .content h2 {
+        margin-top: 15px; }
+      .modal .content span.company {
+        font-weight: 500;
+        margin-top: 6px;
+        color: rgba(0, 0, 0, 0.5); }
+      .modal .content p {
+        font-size: 0.9375rem;
+        margin-top: 16px; }
+    .modal .close {
+      top: 10px;
+      right: 10px;
+      width: 24px;
+      height: 24px; } }
+
+.schedule {
+  width: 100%;
+  max-width: 800px; }
+  .schedule-section {
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-top: 3px solid #ff1919;
+    width: 100%;
+    height: 5px;
+    margin: 25px auto;
+    padding-left: 65px;
+    letter-spacing: 2px;
+    color: #ff1919; }
+    .schedule-section span {
+      position: relative;
+      top: -14px;
+      background-color: white;
+      padding: 0px 10px;
+      text-transform: uppercase; }
+  .schedule-row {
+    display: table;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 15px; }
+    .schedule-row .schedule-col {
+      display: inline-block;
+      vertical-align: top; }
+      .schedule-row .schedule-col.date {
+        font-size: 0.9375rem;
+        width: 50px;
+        text-align: center; }
+      .schedule-row .schedule-col.title {
+        width: 100%;
+        max-width: 535px;
+        margin-top: -2px; }
+        .schedule-row .schedule-col.title .title {
+          font-size: 1.125rem;
+          font-weight: 600; }
+        .schedule-row .schedule-col.title .auditorium {
+          font-size: 0.9375rem;
+          color: rgba(0, 0, 0, 0.75); }
+          .schedule-row .schedule-col.title .auditorium::before {
+            content: 'ауд. '; }
+        .schedule-row .schedule-col.title .schools {
+          display: block;
+          font-size: 0.875rem;
+          color: rgba(0, 0, 0, 0.5); }
+          .schedule-row .schedule-col.title .schools a {
+            color: rgba(0, 0, 0, 0.5); }
+            .schedule-row .schedule-col.title .schools a:hover {
+              color: #ff1919; }
+      .schedule-row .schedule-col.speakers {
+        width: 200px;
+        margin-left: 5px; }
+        .schedule-row .schedule-col.speakers .speaker {
+          font-weight: 500; }
+          .schedule-row .schedule-col.speakers .speaker a {
+            color: black; }
+            .schedule-row .schedule-col.speakers .speaker a:hover {
+              color: #ff1919; }
+        .schedule-row .schedule-col.speakers .company {
+          font-size: 0.9375rem;
+          color: rgba(0, 0, 0, 0.5); }
+
+@media (max-width: 800px) {
+  .schedule-section {
+    font-size: 1.125rem;
+    margin: 20px auto;
+    padding-left: 35px; }
+    .schedule-section span {
+      top: -14px;
+      padding: 0px 10px; }
+  .schedule-row {
+    font-size: 1rem;
+    margin-bottom: 15px; }
+    .schedule-row .schedule-col.date {
+      width: 30px; }
+    .schedule-row .schedule-col.title {
+      width: 70%;
+      max-width: none; }
+      .schedule-row .schedule-col.title .title {
+        font-size: 1.125rem; }
+      .schedule-row .schedule-col.title .auditorium {
+        font-size: 0.9375rem; }
+      .schedule-row .schedule-col.title .schools {
+        display: block;
+        font-size: 0.875rem; }
+    .schedule-row .schedule-col.speakers {
+      width: 20%;
+      margin-left: 0px; }
+      .schedule-row .schedule-col.speakers .speaker {
+        font-size: 0.9375rem; }
+      .schedule-row .schedule-col.speakers .company {
+        display: block;
+        font-size: 0.9375rem; } }
+
+@media (max-width: 420px) {
+  .schedule-section {
+    font-size: 1.125rem;
+    margin: 20px auto;
+    padding-left: 35px; }
+    .schedule-section span {
+      top: -14px;
+      padding: 0px 10px; }
+  .schedule-row {
+    font-size: 1rem;
+    margin-bottom: 15px; }
+    .schedule-row .schedule-col.date {
+      width: 30px; }
+    .schedule-row .schedule-col.title {
+      width: 90%;
+      max-width: none; }
+      .schedule-row .schedule-col.title .title {
+        font-size: 1.125rem; }
+      .schedule-row .schedule-col.title .auditorium {
+        font-size: 0.9375rem; }
+      .schedule-row .schedule-col.title .schools {
+        display: block;
+        font-size: 0.875rem; }
+    .schedule-row .schedule-col.speakers {
+      display: block;
+      width: 100%;
+      margin-top: 5px;
+      margin-left: 30px; }
+      .schedule-row .schedule-col.speakers .speaker {
+        font-size: 0.9375rem; }
+      .schedule-row .schedule-col.speakers .company {
+        display: inline-block;
+        font-size: 0.9375rem;
+        color: rgba(0, 0, 0, 0.5); } }
